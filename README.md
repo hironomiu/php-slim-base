@@ -1,5 +1,4 @@
-# サンプルアプリ
-このアプリはデータベースに対して負荷検証を行いデータベースチューニングなどを学習するためのサンプルアプリです。セッションなど実装しておらず、CSRFなど一般的なセキュリティ対策も未対応なためWebアプリのサンプルとしては利用しないでください。
+# php-slim-base
 
 # SetUp
 
@@ -9,12 +8,10 @@
 $ make install
 ```
 
-## トレーニング
-[documents](https://github.com/hironomiu/db-sql-training/tree/master/documents)配下にDB-SQLのトレーニングを行うMDがあります。こちらのMDを挑戦してみましょう。
 
 ## tips
 ### DB周りの接続設定
-app/config.phpにDB接続(MySQL,Memcached)の設定をすること
+app/config.phpにDB接続(MySQL)の設定をすること
 ```
 $ vi app/config.php
 ```
