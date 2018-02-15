@@ -33,6 +33,11 @@ $container['pdo'] = function() use($container,$host,$mysqldConfig){
 };
 
 
+$container['repository.user'] = function() use($container){
+    $db = $container->get('pdo');
+    return new \Ap\Repository\UsersRepository($db);
+};
+
 $container['memcached'] = function() use($container,$host,$mysqldConfig){
     $mem = new Memcached();
     $mem->addServer($host,$memcachedConfig['port']);
@@ -40,6 +45,6 @@ $container['memcached'] = function() use($container,$host,$mysqldConfig){
 };
 
 $container['session'] = function() {
-        return new \Ap\Session();
+    return new \Ap\Session();
 };
 
