@@ -3,7 +3,7 @@
 # SetUp
 
 ## deploy & DB 
-事前にddlディレクトリの作成、サンプルデータを取り込むこと
+事前に必要なテーブル(users)を作成しておくこと
 ```
 $ make install
 ```
