@@ -1,0 +1,9 @@
+{
+    "require":{
+        "slim/slim":"*",
+        "slim/twig-view":"*"
+    },
+    "autoload":{
+	"psr-4": { "Ap\\": "src/Ap/" }
+    }
+}

@@ -1,0 +1,10 @@
+*.swp
+composer.lock
+composer.phar
+vendor
+node_modules
+public_html/bower_components
+src/config.php
+ddl/
+cache/
+src/cache/*/
