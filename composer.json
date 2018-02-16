@@ -1,7 +1,7 @@
 {
     "require":{
         "slim/slim":"*",
-        "slim/csrf";"*",
+        "slim/csrf":"*",
         "slim/twig-view":"*"
     },
     "autoload":{
