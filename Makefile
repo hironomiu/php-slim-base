@@ -1,5 +1,6 @@
 PHP?=$(shell which php)
 CP?=$(shell which cp)
+MKDIR?=$(shell which mkdir)
 CHMOD?=$(shell which chmod)
 HOST?=localhost
 PORT?=8888
@@ -12,6 +13,7 @@ php-setup:
 
 config-setup:
 	$(CP) src/config.php.template src/config.php
+	$(MKDIR) src/cache
 	$(CHMOD) 777 src/cache
 
 front-setup:
