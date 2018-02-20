@@ -14,3 +14,11 @@ $app->get('/',function ($request, $response, $args) {
         ]);
 });
 
+$app->get('/data_post_sample',function ($request, $response, $args) {
+    return $this->view->render($response,'data_post_sample.twig',[url => "/data_post_sample"]);
+});
+
+$app->post('/data_post_sample',function($request,$response,$args) {
+    return $response->withRedirect('/data_post_sample');
+});
+
