@@ -11,7 +11,7 @@ class UsersRepository
     }
 
     /**
-     * メールアドレスでユーザーが存在するかを確認する
+     * IDでユーザーが存在するかを確認する
      *
      * @param $id
      *

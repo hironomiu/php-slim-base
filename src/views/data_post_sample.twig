@@ -10,14 +10,14 @@
         <form method="post" action={{ url }}>
           <div class="form-group">
             <label for="data1">post data1</label>
-            <input type="text" class="form-control" id="data1">
+            <input type="text" class="form-control" name="data1" id="data1">
           </div>
           <div class="form-group">
             <label for="data2">post data2</label>
-            <input type="text" class="form-control" id="data2">
+            <input type="text" class="form-control" name="data2" id="data2">
           </div>
           <div align="left">
-            <button type="submit" class="btn btn-lg btn-info">Login</button>
+            <button type="submit" class="btn btn-lg btn-info">送信</button>
           </div>
           <input type="hidden" name="{{ name_key }}" value="{{ name }}">
           <input type="hidden" name="{{ value_key }}" value="{{ value }}">

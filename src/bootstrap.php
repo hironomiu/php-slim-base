@@ -38,6 +38,11 @@ $container['repository.user'] = function() use($container){
     return new \Ap\Repository\UsersRepository($db);
 };
 
+$container['repository.sample'] = function() use($container){
+    $db = $container->get('pdo');
+    return new \Ap\Repository\SamplesRepository($db);
+};
+
 $container['memcached'] = function() use($container,$host,$mysqldConfig){
     $mem = new Memcached();
     $mem->addServer($host,$memcachedConfig['port']);

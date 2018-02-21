@@ -3,7 +3,19 @@
 # SetUp
 
 ## deploy & DB 
-事前に必要なテーブル(users)を作成しておくこと
+事前に必要なテーブル(users,sample)を作成しておくこと
+
+```
+mysql> CREATE TABLE `samples` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `data1` text NOT NULL,
+  `data2` text NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+```
+
 ```
 $ make install
 ```
