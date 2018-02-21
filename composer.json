@@ -2,7 +2,8 @@
     "require":{
         "slim/slim":"*",
         "slim/csrf":"*",
-        "slim/twig-view":"*"
+        "slim/twig-view":"*",
+        "respect/validation":"*"
     },
     "autoload":{
 	"psr-4": { "Ap\\": "src/Ap/" }
