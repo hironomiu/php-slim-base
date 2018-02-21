@@ -49,17 +49,20 @@ $app->post('/data_post_sample',function($request,$response,$args) {
     // postパラーメタ取得
     $input = $request->getParsedBody();
 
+    // バリデーション
     $validator = new \Ap\Validator\Sample();
-    if ($validator->validate($input)) {
-    // リポジトリー取得
-    $repository = $this->get('repository.sample');
-   
-    // データ挿入
-    $sample = new \Ap\Model\Samples($input);
-    $result = $repository->insert($sample);
 
-    return $response->withRedirect('/data_post_sample');
+    if ($validator->validate($input)) {
+        // リポジトリー取得
+        $repository = $this->get('repository.sample');
+       
+        // データ挿入
+        $sample = new \Ap\Model\Samples($input);
+        $result = $repository->insert($sample);
+    
+        return $response->withRedirect('/data_post_sample');
     }
+
     // フラッシュメッセージは今後実装
     var_dump($validator->errors());
 });
