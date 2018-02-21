@@ -5,6 +5,7 @@
 ## deploy & DB 
 事前に必要なテーブル(users,sample)を作成しておくこと
 
+注：usersは将来変更予定
 ```
 mysql> CREATE TABLE `samples` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -13,6 +14,22 @@ mysql> CREATE TABLE `samples` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+mysql>CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `mail` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `sex` int(11) NOT NULL,
+  `birthday` datetime NOT NULL,
+  `profile1` text,
+  `profile2` text,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `mail` (`mail`)
 ) ENGINE=InnoDB;
 ```
 
