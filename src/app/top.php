@@ -1,7 +1,5 @@
 <?php
 
-use Respect\Validation\Validator as v;
-
 $app->get('/',function ($request, $response, $args) {
     // getパラメータ取得
     $req = $request->getQueryParams();
