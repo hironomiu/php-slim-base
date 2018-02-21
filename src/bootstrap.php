@@ -43,13 +43,10 @@ $container['repository.sample'] = function() use($container){
     return new \Ap\Repository\SamplesRepository($db);
 };
 
-$container['memcached'] = function() use($container,$host,$mysqldConfig){
-    $mem = new Memcached();
-    $mem->addServer($host,$memcachedConfig['port']);
-    return $mem;
-};
-
 $container['session'] = function() {
     return new \Ap\Session();
 };
 
+$container['csrf'] = function ($c) {
+        return new \Slim\Csrf\Guard;
+};
