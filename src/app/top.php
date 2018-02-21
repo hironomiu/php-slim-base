@@ -1,6 +1,10 @@
 <?php
 
+// セッション
+$session = $container->get('session');
+
 $app->get('/',function ($request, $response, $args) {
+
     // getパラメータ取得
     $req = $request->getQueryParams();
 
