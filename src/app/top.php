@@ -49,6 +49,8 @@ $app->post('/data_post_sample',function($request,$response,$args) {
     // postパラーメタ取得
     $input = $request->getParsedBody();
 
+    $validator = new \Ap\Validator\Sample();
+    if ($validator->validate($input)) {
     // リポジトリー取得
     $repository = $this->get('repository.sample');
    
@@ -57,5 +59,8 @@ $app->post('/data_post_sample',function($request,$response,$args) {
     $result = $repository->insert($sample);
 
     return $response->withRedirect('/data_post_sample');
+    }
+    // フラッシュメッセージは今後実装
+    var_dump($validator->errors());
 });
 
