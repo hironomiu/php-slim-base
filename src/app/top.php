@@ -3,6 +3,9 @@
 // セッション
 $session = $container->get('session');
 
+// CSRF
+$app->add($container->get('csrf'));
+
 $app->get('/',function ($request, $response, $args) {
 
     // getパラメータ取得
@@ -29,6 +32,13 @@ $app->get('/',function ($request, $response, $args) {
 });
 
 $app->get('/data_post_sample',function ($request, $response, $args) {
+    // CSRF
+    $csrf = $this->get('csrf');
+    $name_key = $csrf->getTokenNameKey();
+    $value_key = $csrf->getTokenValueKey();
+    $name = $csrf->getTokenName();
+    $value = $csrf->getTokenValue();
+
     // getパラメータ取得
     $req = $request->getQueryParams();
 
@@ -44,7 +54,7 @@ $app->get('/data_post_sample',function ($request, $response, $args) {
 
     // 検索結果取得
     $result = $repository->findByID($id);
-    return $this->view->render($response,'data_post_sample.twig',[url => "/data_post_sample",'data1' => $result->data1]);
+    return $this->view->render($response,'data_post_sample.twig',[url => "/data_post_sample",'data1' => $result->data1,'name_key' => $name_key,'value_key' => $value_key,'name' => $name,'value' => $value]);
 });
 
 $app->post('/data_post_sample',function($request,$response,$args) {
