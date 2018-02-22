@@ -1,8 +1,10 @@
 # php-slim-base
+Webアプリケーション構築初学者向けのPHP(+Slim3)ベースアプリ
 
-# SetUp
+## 前提
+PHP7以上、MySQLがインストールされていること。Makefileが実行できること。
 
-## deploy & DB 
+## DBSetUp
 事前に必要なテーブル(users,sample)を作成しておくこと
 
 注：usersは将来変更予定
@@ -33,6 +35,8 @@ mysql>CREATE TABLE `users` (
 ) ENGINE=InnoDB;
 ```
 
+## アプリケーションSetUp 
+以下の1文でセットアップは完了。Makefile内にてcomposer、npm、bowerを叩いている
 ```
 $ make install
 ```
