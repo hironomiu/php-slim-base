@@ -53,8 +53,8 @@ $app->get('/data_post_sample',function ($request, $response, $args) {
     $repository = $this->get('repository.sample');
 
     // 検索結果取得
-    $result = $repository->findByID($id);
-    return $this->view->render($response,'data_post_sample.twig',[url => "/data_post_sample",'data1' => $result->data1,'name_key' => $name_key,'value_key' => $value_key,'name' => $name,'value' => $value]);
+    $result = $repository->findAll();
+    return $this->view->render($response,'data_post_sample.twig',[url => "/data_post_sample",'data_line' => $result,'name_key' => $name_key,'value_key' => $value_key,'name' => $name,'value' => $value]);
 });
 
 $app->post('/data_post_sample',function($request,$response,$args) {

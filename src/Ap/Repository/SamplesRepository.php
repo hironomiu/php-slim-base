@@ -42,4 +42,18 @@ class SamplesRepository
         $sample = new Samples($result);
         return $sample;
     }
+
+    /**
+     * 全件レコードを抽出する
+     *
+     * @return Samples
+     */
+    public function findAll()
+    {
+        $sql = 'select * from samples';
+        $sth = $this->db->prepare($sql);
+        $sth->execute();
+        $results = $sth->fetchAll(\PDO::FETCH_BOTH);
+        return $results;
+    }
 }

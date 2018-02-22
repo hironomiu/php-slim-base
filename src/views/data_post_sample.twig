@@ -18,5 +18,13 @@
           <input type="hidden" name="{{ name_key }}" value="{{ name }}">
           <input type="hidden" name="{{ value_key }}" value="{{ value }}">
         </form>
+        <br>
+        {%if data_line %}
+          <ul class="list-group">
+          {% for data in data_line %}
+            <li class="list-group-item" style="word-wrap: break-word;"> {{ data.data1 }} ({{ data.data2 }})</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
       </div>
 {% endblock %}
